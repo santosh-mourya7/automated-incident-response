@@ -26,6 +26,7 @@ jobs:
         run: python scripts/health_check.py
         env:
           MONITOR_URL: ${{ secrets.MONITOR_URL }}
+          TEST_MODE: ${{ secrets.TEST_MODE }}
         continue-on-error: true
 
       - name: Create Incident if Unhealthy
