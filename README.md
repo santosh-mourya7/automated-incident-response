@@ -7,7 +7,6 @@
 ![ServiceNow](https://img.shields.io/badge/ServiceNow-00C853?style=for-the-badge&logo=servicenow&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
-<img width="373" height="67" alt="image" src="https://github.com/user-attachments/assets/db770181-fbb4-4578-9a34-8bf55d6e16e8" />
 
 
 ---
@@ -328,3 +327,4 @@ Automated Incident Response System
 ## 🙌 Author
 
 Built as a portfolio project demonstrating enterprise-grade automation using ServiceNow, GitHub Actions, Python REST APIs, and Slack integrations.
+
