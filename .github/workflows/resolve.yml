@@ -1,0 +1,37 @@
+name: Auto Resolve Incident
+
+on:
+  workflow_dispatch:
+    inputs:
+      incident_sys_id:
+        description: 'ServiceNow Incident SYS ID'
+        required: true
+      incident_number:
+        description: 'Incident Number (e.g. INC0010001)'
+        required: true
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Resolve Incident
+        run: python scripts/resolve_incident.py
+        env:
+          SNOW_INSTANCE:     ${{ secrets.SNOW_INSTANCE }}
+          SNOW_USERNAME:     ${{ secrets.SNOW_USERNAME }}
+          SNOW_PASSWORD:     ${{ secrets.SNOW_PASSWORD }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          INCIDENT_SYS_ID:   ${{ github.event.inputs.incident_sys_id }}
+          INCIDENT_NUMBER:   ${{ github.event.inputs.incident_number }}
